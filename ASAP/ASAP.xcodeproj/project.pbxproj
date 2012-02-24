@@ -18,6 +18,7 @@
 		E401DD8F14F3821900ABF031 /* NSAttributedString+MyAttributedStringAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E401DD8E14F3821900ABF031 /* NSAttributedString+MyAttributedStringAdditions.m */; };
 		E401DD9114F382D900ABF031 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E401DD9014F382D900ABF031 /* CoreText.framework */; };
 		E401DD9514F3894D00ABF031 /* MyAttributedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = E401DD9414F3894C00ABF031 /* MyAttributedLabel.m */; };
+		E46DB91E14F5F1A7005EF30D /* MyInternetConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = E46DB91D14F5F1A7005EF30D /* MyInternetConnector.m */; };
 		E4F1402314EE3E9600D258DF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4F1402214EE3E9600D258DF /* UIKit.framework */; };
 		E4F1402514EE3E9600D258DF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4F1402414EE3E9600D258DF /* Foundation.framework */; };
 		E4F1402714EE3E9600D258DF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4F1402614EE3E9600D258DF /* CoreGraphics.framework */; };
@@ -57,8 +58,10 @@
 		E401DD8E14F3821900ABF031 /* NSAttributedString+MyAttributedStringAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSAttributedString+MyAttributedStringAdditions.m"; path = "ViewComponents/NSAttributedString+MyAttributedStringAdditions.m"; sourceTree = "<group>"; };
 		E401DD9014F382D900ABF031 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		E401DD9214F3883C00ABF031 /* MyAttributedLabelDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyAttributedLabelDelegate.h; path = ViewComponents/MyAttributedLabelDelegate.h; sourceTree = "<group>"; };
-		E401DD9314F3894C00ABF031 /* MyAttributedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAttributedLabel.h; sourceTree = "<group>"; };
-		E401DD9414F3894C00ABF031 /* MyAttributedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAttributedLabel.m; sourceTree = "<group>"; };
+		E401DD9314F3894C00ABF031 /* MyAttributedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyAttributedLabel.h; path = ViewComponents/MyAttributedLabel.h; sourceTree = "<group>"; };
+		E401DD9414F3894C00ABF031 /* MyAttributedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyAttributedLabel.m; path = ViewComponents/MyAttributedLabel.m; sourceTree = "<group>"; };
+		E46DB91C14F5F1A7005EF30D /* MyInternetConnector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyInternetConnector.h; sourceTree = "<group>"; };
+		E46DB91D14F5F1A7005EF30D /* MyInternetConnector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyInternetConnector.m; sourceTree = "<group>"; };
 		E4F1401E14EE3E9600D258DF /* ASAP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ASAP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4F1402214EE3E9600D258DF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E4F1402414EE3E9600D258DF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -67,7 +70,6 @@
 		E4F1402C14EE3E9600D258DF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E4F1402E14EE3E9600D258DF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E4F1403014EE3E9600D258DF /* ASAP-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ASAP-Prefix.pch"; sourceTree = "<group>"; };
-		E4F1403114EE3E9600D258DF /* AutoRefreshHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AutoRefreshHeaderView.h; path = ASAP/ViewComponents/AutoRefreshHeaderView.h; sourceTree = SOURCE_ROOT; };
 		E4F1403214EE3E9600D258DF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		E4F1403914EE3E9600D258DF /* ASAPTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ASAPTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4F1403A14EE3E9600D258DF /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -132,6 +134,15 @@
 			name = images;
 			sourceTree = "<group>";
 		};
+		E46DB91A14F5F150005EF30D /* MyUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				E46DB91C14F5F1A7005EF30D /* MyInternetConnector.h */,
+				E46DB91D14F5F1A7005EF30D /* MyInternetConnector.m */,
+			);
+			name = MyUtilities;
+			sourceTree = "<group>";
+		};
 		E4F1401314EE3E9500D258DF = {
 			isa = PBXGroup;
 			children = (
@@ -167,8 +178,8 @@
 		E4F1402814EE3E9600D258DF /* ASAP */ = {
 			isa = PBXGroup;
 			children = (
+				E46DB91A14F5F150005EF30D /* MyUtilities */,
 				E401DD6A14F37AEA00ABF031 /* ViewComponents */,
-				E4F1403114EE3E9600D258DF /* AutoRefreshHeaderView.h */,
 				E4F1403214EE3E9600D258DF /* AppDelegate.m */,
 				E4F1402914EE3E9600D258DF /* Supporting Files */,
 			);
@@ -322,6 +333,7 @@
 				E401DD7414F37B5800ABF031 /* BottomLoadingView.m in Sources */,
 				E401DD8F14F3821900ABF031 /* NSAttributedString+MyAttributedStringAdditions.m in Sources */,
 				E401DD9514F3894D00ABF031 /* MyAttributedLabel.m in Sources */,
+				E46DB91E14F5F1A7005EF30D /* MyInternetConnector.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
