@@ -9,12 +9,19 @@
 #import <Foundation/Foundation.h>
 #define kConnectionTimeOutInterval 20
 
-@interface MyInternetConnector : NSObject<NSURLConnectionDelegate>
+@interface MyInternetConnector : NSObject< NSURLConnectionDelegate, NSURLConnectionDataDelegate>
 {
     NSMutableData *activeDownloadData;
-    NSURLConnection *connection;
-    
+    NSURLConnection *myConnection;
+    NSString *myURLStr;
 }
 @property (nonatomic, retain) NSMutableData *activeDownloadData;
-@property (nonatomic, retain) NSURLConnection *connection;
+@property (nonatomic, retain) NSURLConnection *myConnection;
+@property (nonatomic, retain) NSString *myURLStr;
+
+
+-(BOOL) startConnectionWithURLString: (NSString *) urlStr;
+-(BOOL) cancelConnection:(NSString *) urlStr;
+-(BOOL) startConnection;
+-(BOOL) cancelConnection;
 @end
