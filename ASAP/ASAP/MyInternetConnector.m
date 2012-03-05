@@ -7,29 +7,11 @@
 //
 
 #import "MyInternetConnector.h"
-
+#import "MyURLConnection.h"
 @implementation MyInternetConnector
-@synthesize activeDownloadData, myConnection,myURLStr;
 
+@synthesize target,allConnections;
 
--(void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
-{
-    
-}
-- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
-{
-
-}
-
--(void)connectionDidFinishLoading:(NSURLConnection *)connection
-{
-
-}
-
-- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
-{
-    [self.activeDownloadData  appendData:data];
-}
 
 
 -(BOOL) startConnectionWithURLString: (NSString *) urlStr
@@ -38,69 +20,63 @@
     {
         return NO;
     }
-    if ([urlStr compare:self.myURLStr]== NSOrderedSame) 
-    {
-        [self.myConnection start];
-        return  YES;
-    }
-    self.myURLStr = urlStr;
-    NSURLRequest *myRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:self.myURLStr]];
-    self.myConnection = [[[NSURLConnection alloc] initWithRequest:myRequest delegate:self startImmediately:NO] autorelease];
-    [self.myConnection start];
+    NSURLRequest *myRequest = [self generateRequestWithURL:urlStr];
+    NSURLConnection *myConnection = [[[NSURLConnection alloc] initWithRequest:myRequest delegate:self startImmediately:NO] autorelease];
+    [myConnection start];
     return YES;
 }
--(BOOL) cancelConnection:(NSString *) urlStr
+
+-(BOOL) startConnectionWithMethod: (NSString *)methodName options:(NSDictionary *) options
 {
-    if (urlStr == nil) 
+    if (methodName == nil) 
     {
         return NO;
     }
+    NSURLRequest *myRequest = [self generateRequestWithMethod:methodName options:options];
+    NSURLConnection *myConnection = [[[NSURLConnection alloc] initWithRequest:myRequest delegate:self startImmediately:NO] autorelease];
+    [myConnection start];
+    return YES;
     
-    if([urlStr compare:self.myURLStr] == NSOrderedSame)
-    {
-        [self.myConnection  cancel];
-        return YES;
-    }
-    return NO;
 }
--(BOOL) startConnection
+-(void) removeTargetFromConnector
 {
-    self.activeDownloadData = [NSData data];
-    if (self.myURLStr != nil) 
-    {
-        return [self startConnectionWithURLString:self.myURLStr];
-    }
-    else
-    {
-        return NO;
-    }
+    target = nil;
+    [allConnections removeAllObjects];
 }
--(BOOL) cancelConnection
+
+-(void) assignTargetToConnector:(id) newTarget
 {
-    self.activeDownloadData = nil;
-    if (self.myURLStr != nil) 
-    {
-        return [self cancelConnection:self.myURLStr];
-    }
-    else
-    {
-        return NO;
-    }
+    
 }
+-(NSURLRequest *)generateRequestWithURL : (NSString *)urlStr
+{
+    NSURLRequest *myRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:urlStr]];
+    return  myRequest;
+    
+}
+-(NSURLRequest *)generateRequestWithMethod:(NSString *) methodName options:(NSDictionary *) options
+{
+    /* To do list*/
+    NSURLRequest *myRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:@"www.google.com.hk"]];
+    return  myRequest;
+}
+
+
 
 -(id)init
 {
     if (self = [super init]) 
     {
-        self.activeDownloadData = [NSData data];
+        self.allConnections = [NSMutableArray arrayWithCapacity:10];
     }
     return self;
 }
 
 -(void)dealloc
 {
-    self.myURLStr = nil;
-    self.myConnection = nil;
+    self.allConnections = nil;
+    self.target = nil;
     [super dealloc];
 }
+
 @end

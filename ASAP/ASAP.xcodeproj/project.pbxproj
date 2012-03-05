@@ -18,6 +18,7 @@
 		E401DD8F14F3821900ABF031 /* NSAttributedString+MyAttributedStringAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E401DD8E14F3821900ABF031 /* NSAttributedString+MyAttributedStringAdditions.m */; };
 		E401DD9114F382D900ABF031 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E401DD9014F382D900ABF031 /* CoreText.framework */; };
 		E401DD9514F3894D00ABF031 /* MyAttributedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = E401DD9414F3894C00ABF031 /* MyAttributedLabel.m */; };
+		E41B56681504DE1400A1B1E1 /* MyURLConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = E41B56671504DE1400A1B1E1 /* MyURLConnection.m */; };
 		E46DB91E14F5F1A7005EF30D /* MyInternetConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = E46DB91D14F5F1A7005EF30D /* MyInternetConnector.m */; };
 		E4F1402314EE3E9600D258DF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4F1402214EE3E9600D258DF /* UIKit.framework */; };
 		E4F1402514EE3E9600D258DF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4F1402414EE3E9600D258DF /* Foundation.framework */; };
@@ -60,6 +61,9 @@
 		E401DD9214F3883C00ABF031 /* MyAttributedLabelDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyAttributedLabelDelegate.h; path = ViewComponents/MyAttributedLabelDelegate.h; sourceTree = "<group>"; };
 		E401DD9314F3894C00ABF031 /* MyAttributedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyAttributedLabel.h; path = ViewComponents/MyAttributedLabel.h; sourceTree = "<group>"; };
 		E401DD9414F3894C00ABF031 /* MyAttributedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyAttributedLabel.m; path = ViewComponents/MyAttributedLabel.m; sourceTree = "<group>"; };
+		E41B56661504DE1400A1B1E1 /* MyURLConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyURLConnection.h; sourceTree = "<group>"; };
+		E41B56671504DE1400A1B1E1 /* MyURLConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyURLConnection.m; sourceTree = "<group>"; };
+		E41B566A1504E06A00A1B1E1 /* MyURLConnectionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyURLConnectionDelegate.h; sourceTree = "<group>"; };
 		E46DB91C14F5F1A7005EF30D /* MyInternetConnector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyInternetConnector.h; sourceTree = "<group>"; };
 		E46DB91D14F5F1A7005EF30D /* MyInternetConnector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyInternetConnector.m; sourceTree = "<group>"; };
 		E4F1401E14EE3E9600D258DF /* ASAP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ASAP.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -139,6 +143,9 @@
 			children = (
 				E46DB91C14F5F1A7005EF30D /* MyInternetConnector.h */,
 				E46DB91D14F5F1A7005EF30D /* MyInternetConnector.m */,
+				E41B56661504DE1400A1B1E1 /* MyURLConnection.h */,
+				E41B56671504DE1400A1B1E1 /* MyURLConnection.m */,
+				E41B566A1504E06A00A1B1E1 /* MyURLConnectionDelegate.h */,
 			);
 			name = MyUtilities;
 			sourceTree = "<group>";
@@ -334,6 +341,7 @@
 				E401DD8F14F3821900ABF031 /* NSAttributedString+MyAttributedStringAdditions.m in Sources */,
 				E401DD9514F3894D00ABF031 /* MyAttributedLabel.m in Sources */,
 				E46DB91E14F5F1A7005EF30D /* MyInternetConnector.m in Sources */,
+				E41B56681504DE1400A1B1E1 /* MyURLConnection.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
