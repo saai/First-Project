@@ -8,34 +8,32 @@
 
 #import "MyInternetConnector.h"
 #import "MyURLConnection.h"
+
 @implementation MyInternetConnector
 
 @synthesize target,allConnections;
 
-
-
--(BOOL) startConnectionWithURLString: (NSString *) urlStr
+#pragma mark - Override Methods
+-(id)init
 {
-    if (urlStr == nil) 
+    if (self = [super init]) 
     {
-        return NO;
+        self.allConnections = [NSMutableDictionary dictionaryWithCapacity:10];
     }
-    NSURLRequest *myRequest = [self generateRequestWithURL:urlStr];
-    NSURLConnection *myConnection = [[[NSURLConnection alloc] initWithRequest:myRequest delegate:self startImmediately:NO] autorelease];
-    [myConnection start];
-    return YES;
+    return self;
 }
 
--(BOOL) startConnectionWithMethod: (NSString *)methodName options:(NSDictionary *) options
+-(void)dealloc
 {
-    if (methodName == nil) 
-    {
-        return NO;
-    }
-    NSURLRequest *myRequest = [self generateRequestWithMethod:methodName options:options];
-    NSURLConnection *myConnection = [[[NSURLConnection alloc] initWithRequest:myRequest delegate:self startImmediately:NO] autorelease];
-    [myConnection start];
-    return YES;
+    self.allConnections = nil;
+    self.target = nil;
+    [super dealloc];
+}
+
+#pragma mark - Custom Methods
+-(void) assignTargetToConnector:(id) newTarget
+{
+    self.target = newTarget;
     
 }
 -(void) removeTargetFromConnector
@@ -44,10 +42,34 @@
     [allConnections removeAllObjects];
 }
 
--(void) assignTargetToConnector:(id) newTarget
+
+-(BOOL) startConnectionWithURLString: (NSString *) urlStr callBackMethod:(SEL) callBackMethod
 {
+    if (urlStr == nil) 
+    {
+        return NO;
+    }
+
+    return YES;
+}
+
+-(BOOL) startConnectionWithMethod: (NSString *)methodName options:(NSDictionary *) options  callBackMethod:(SEL) callBackMethod
+{
+    if (methodName == nil) 
+    {
+        return NO;
+    }
+    NSURLRequest *request = [self generateRequestWithMethod:methodName options:nil];
+    NSString *connectionKey = methodName;
+    MyURLConnection *anConnection = [[MyURLConnection alloc] init];
+    anConnection.delegate = self;
+    [allConnections  setValue:anConnection forKey:connectionKey];
+    [anConnection startConnectionWithKey:connectionKey request:request callBackMethod:callBackMethod];
+    [anConnection release];
+    return YES;
     
 }
+
 -(NSURLRequest *)generateRequestWithURL : (NSString *)urlStr
 {
     NSURLRequest *myRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:urlStr]];
@@ -61,22 +83,28 @@
     return  myRequest;
 }
 
-
-
--(id)init
+-(BOOL) cancelConnection:(NSString *) connectionKey
 {
-    if (self = [super init]) 
-    {
-        self.allConnections = [NSMutableArray arrayWithCapacity:10];
-    }
-    return self;
+    return YES;
+}
+-(BOOL) cancelAllConnections
+{
+    return YES;
 }
 
--(void)dealloc
+
+#pragma mark - MyURLConnectionDelegate
+
+-(void) connectionDidEndDownload:(NSData *) downloadedData connectionKey:(NSString*) connectionKey
 {
-    self.allConnections = nil;
-    self.target = nil;
-    [super dealloc];
+    /*To Do List*/
+    // return the data to the target method according to the connectionKey; 
+    
 }
+-(void)connectionDidFailWithError:(NSError *)error connectionKey:(NSString *)connectionKey callBackMethod:(SEL)callBackMethod
+{
+
+}
+
 
 @end

@@ -7,25 +7,26 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MyURLConnectionDelegate.h"
 #define kConnectionTimeOutInterval 20
 
-@interface MyInternetConnector : NSObject
+@interface MyInternetConnector : NSObject<MyURLConnectionDelegate>
 {
-    NSMutableArray *allConnections;
     id target;
+    NSMutableDictionary *allConnections;
+
 }
-@property (nonatomic, retain) NSMutableArray *allConnections;
 @property (nonatomic, assign) id target;
+@property (nonatomic, retain) NSMutableDictionary *allConnections;
+
 
 -(void) assignTargetToConnector:(id) newTarget;
 -(void) removeTargetFromConnector;
--(BOOL) cancelAllConnections;
--(BOOL) startConnectionWithURLString: (NSString *) urlStr;
--(BOOL) startConnectionWithMethod: (NSString *)methodName options:(NSDictionary *) options;
--(BOOL) cancelConnection:(NSString *) urlStr;
--(BOOL) startConnection;
--(BOOL) cancelConnection;
 
+-(BOOL) startConnectionWithURLString: (NSString *) urlStr callBackMethod:(SEL) callBackMethod;
+-(BOOL) startConnectionWithMethod: (NSString *)methodName options:(NSDictionary *) options callBackMethod:(SEL) callBackMethod;
+-(BOOL) cancelConnection:(NSString *) connectionKey;
+-(BOOL) cancelAllConnections;
 // these methods depends on the API of the web server.
 -(NSURLRequest *)generateRequestWithURL : (NSString *)urlStr;
 -(NSURLRequest *)generateRequestWithMethod:(NSString *) methodName options:(NSDictionary *) options;

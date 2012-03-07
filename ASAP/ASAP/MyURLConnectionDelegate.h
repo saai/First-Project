@@ -9,5 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @protocol MyURLConnectionDelegate <NSObject>
--connectionDidEndDownload:(NSData *) downloadedData;
+-(void) connectionDidEndDownload:(NSData *) downloadedData connectionKey:(NSString*) connectionKey callBackMethod:(SEL) callBackMethod;
+-(void) connectionDidFailWithError:(NSError *) error connectionKey:(NSString *)connectionKey callBackMethod:(SEL) callBackMethod;
 @end

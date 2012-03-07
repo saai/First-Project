@@ -10,13 +10,20 @@
 #import "MyURLConnectionDelegate.h"
 @interface MyURLConnection : NSObject< NSURLConnectionDelegate, NSURLConnectionDataDelegate>
 {
-    NSURLConnection *myConnection;
-    NSData *activeDownload;
     id<MyURLConnectionDelegate> delegate;
+    SEL callBackMethod;
+    NSURLConnection *myConnection;
+    NSMutableData *activeDownload;
+    NSString *connectionKey;
+    
 }
-
-@property(nonatomic, retain)NSURLConnection *myConnection;
-@property(nonatomic, retain)NSData *activeDownload;
 @property(nonatomic, assign)id<MyURLConnectionDelegate> delegate;
+@property(nonatomic, assign)SEL callBackMethod;
+@property(nonatomic, retain)NSURLConnection *myConnection;
+@property(nonatomic, retain)NSMutableData *activeDownload;
+@property(nonatomic, retain)NSString *connectionKey;
 
+
+-(BOOL) startConnectionWithKey:(NSString *)key request:(NSURLRequest *)request callBackMethod:(SEL) method;
+-(BOOL) cancelConnection;
 @end
