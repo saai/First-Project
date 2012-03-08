@@ -9,12 +9,12 @@
 #import "MyURLConnection.h"
 
 @implementation MyURLConnection
-@synthesize delegate,callBackMethod;
+@synthesize delegate,callBackMethodString;
 @synthesize activeDownload, myConnection,connectionKey;
 
 -(BOOL) startConnectionWithKey:(NSString *)key request:(NSURLRequest *)request callBackMethod:(SEL) method
 {
-    self.callBackMethod = method;
+    self.callBackMethodString = NSStringFromSelector(method);
     self.connectionKey = key;
     [self.myConnection cancel];
     self.myConnection = [[[NSURLConnection alloc] initWithRequest:request delegate:self startImmediately:NO] autorelease];
@@ -27,7 +27,7 @@
     self.activeDownload = nil;
     self.myConnection = nil;
     self.connectionKey = nil;
-    self.callBackMethod = nil;
+    self.callBackMethodString = nil;
     return YES;
 }
 -(void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
@@ -39,6 +39,7 @@
 {
     if (delegate !=nil && [delegate respondsToSelector:@selector(connectionDidFailWithError:connectionKey:callBackMethod:)]) 
     {
+        SEL callBackMethod = NSSelectorFromString(callBackMethodString) ;
         [delegate connectionDidFailWithError:error connectionKey:connectionKey callBackMethod:callBackMethod];
     }
 }
@@ -47,9 +48,9 @@
 {
     if (delegate != nil && [delegate respondsToSelector:@selector(connectionDidEndDownload:connectionKey:callBackMethod:)]) 
     {
+        SEL callBackMethod = NSSelectorFromString(callBackMethodString) ;
         [delegate connectionDidEndDownload:activeDownload connectionKey:connectionKey callBackMethod:callBackMethod];
     }
-    
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
@@ -60,7 +61,7 @@
 - (void)dealloc
 {
     self.delegate = nil;
-    self.callBackMethod = nil;
+    self.callBackMethodString = nil;
     self.activeDownload = nil;
     self.myConnection = nil;
     self.connectionKey = nil;

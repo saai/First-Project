@@ -38,8 +38,8 @@
 }
 -(void) removeTargetFromConnector
 {
-    target = nil;
-    [allConnections removeAllObjects];
+    self.target = nil;
+    [self cancelAllConnections];
 }
 
 
@@ -49,7 +49,13 @@
     {
         return NO;
     }
-
+    NSURLRequest *request = [self generateRequestWithURL:urlStr];
+    NSString *connectionKey = urlStr;
+    MyURLConnection *anConnection = [[MyURLConnection alloc] init];
+    anConnection.delegate = self;
+    [allConnections  setValue:anConnection forKey:connectionKey];
+    [anConnection startConnectionWithKey:connectionKey request:request callBackMethod:callBackMethod];
+    [anConnection release];
     return YES;
 }
 
@@ -85,25 +91,55 @@
 
 -(BOOL) cancelConnection:(NSString *) connectionKey
 {
-    return YES;
+    NSAssert(connectionKey != nil,@"the connectionKey is NULL");
+    MyURLConnection *anConnection = [self.allConnections objectForKey:connectionKey];
+    
+    if ([anConnection cancelConnection]) 
+    {
+        [self.allConnections removeObjectForKey:connectionKey];
+        return YES;
+    }
+    else
+        return NO;
 }
 -(BOOL) cancelAllConnections
 {
-    return YES;
+    BOOL success ;
+    for (MyURLConnection *anConnection in self.allConnections) 
+    {
+        success &= [anConnection cancelConnection];
+    }
+    [self.allConnections removeAllObjects];
+    return success;
 }
 
 
 #pragma mark - MyURLConnectionDelegate
 
--(void) connectionDidEndDownload:(NSData *) downloadedData connectionKey:(NSString*) connectionKey
+-(void)connectionDidEndDownload:(NSData *)downloadedData connectionKey:(NSString *)connectionKey callBackMethod:(SEL)callBackMethod
 {
     /*To Do List*/
     // return the data to the target method according to the connectionKey; 
+    // parse the data(json) to dictionary  result.
+    NSAssert(connectionKey != nil,@"the connectionKey is NULL");
+    NSDictionary *result = [NSDictionary dictionary];
+    if (target != nil && [target respondsToSelector:callBackMethod]) 
+    {
+        [target performSelectorOnMainThread:callBackMethod withObject:result waitUntilDone:NO ];
+    }
+    [self.allConnections removeObjectForKey:connectionKey];
     
 }
 -(void)connectionDidFailWithError:(NSError *)error connectionKey:(NSString *)connectionKey callBackMethod:(SEL)callBackMethod
 {
-
+    // call back the method with json value nil
+    NSAssert(connectionKey != nil,@"the connectionKey is NULL");
+    // remove this connection from dictionary
+    if (target != nil && [target respondsToSelector:callBackMethod]) 
+    {
+        [target performSelectorOnMainThread:callBackMethod withObject:nil waitUntilDone:NO ];
+    }
+    [self.allConnections removeObjectForKey:connectionKey];
 }
 
 

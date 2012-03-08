@@ -11,17 +11,17 @@
 @interface MyURLConnection : NSObject< NSURLConnectionDelegate, NSURLConnectionDataDelegate>
 {
     id<MyURLConnectionDelegate> delegate;
-    SEL callBackMethod;
+    NSString *callBackMethodString;
     NSURLConnection *myConnection;
     NSMutableData *activeDownload;
     NSString *connectionKey;
     
 }
 @property(nonatomic, assign)id<MyURLConnectionDelegate> delegate;
-@property(nonatomic, assign)SEL callBackMethod;
+@property(nonatomic, assign)NSString* callBackMethodString;
 @property(nonatomic, retain)NSURLConnection *myConnection;
 @property(nonatomic, retain)NSMutableData *activeDownload;
-@property(nonatomic, retain)NSString *connectionKey;
+@property(nonatomic, copy)NSString *connectionKey;
 
 
 -(BOOL) startConnectionWithKey:(NSString *)key request:(NSURLRequest *)request callBackMethod:(SEL) method;
