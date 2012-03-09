@@ -41,6 +41,20 @@
 			remoteGlobalIDString = E4F1401D14EE3E9600D258DF;
 			remoteInfo = ASAP;
 		};
+		E4FBFE1C1509C7FE00F48E50 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E4FBFE171509C7FE00F48E50 /* TouchJSON-iOS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 37A8C0F312B720A8009953BD;
+			remoteInfo = "TouchJSON-iphoneos";
+		};
+		E4FBFE1E1509C7FE00F48E50 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E4FBFE171509C7FE00F48E50 /* TouchJSON-iOS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 036A8E491356413D001DC50C;
+			remoteInfo = "TouchJSON-iphonesimulator";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +95,7 @@
 		E4F1404414EE3E9600D258DF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E4F1404614EE3E9600D258DF /* ASAPTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASAPTests.h; sourceTree = "<group>"; };
 		E4F1404714EE3E9600D258DF /* ASAPTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASAPTests.m; sourceTree = "<group>"; };
+		E4FBFE171509C7FE00F48E50 /* TouchJSON-iOS.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "TouchJSON-iOS.xcodeproj"; path = "TouchJSONPrj/TouchJSON-iOS.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +168,7 @@
 		E4F1401314EE3E9500D258DF = {
 			isa = PBXGroup;
 			children = (
+				E4FBFE171509C7FE00F48E50 /* TouchJSON-iOS.xcodeproj */,
 				E4F1402814EE3E9600D258DF /* ASAP */,
 				E4F1404014EE3E9600D258DF /* ASAPTests */,
 				E4F1402114EE3E9600D258DF /* Frameworks */,
@@ -224,6 +240,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		E4FBFE181509C7FE00F48E50 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E4FBFE1D1509C7FE00F48E50 /* libTouchJSON-iphoneos.a */,
+				E4FBFE1F1509C7FE00F48E50 /* libTouchJSON-iphonesimulator.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -281,6 +306,12 @@
 			mainGroup = E4F1401314EE3E9500D258DF;
 			productRefGroup = E4F1401F14EE3E9600D258DF /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = E4FBFE181509C7FE00F48E50 /* Products */;
+					ProjectRef = E4FBFE171509C7FE00F48E50 /* TouchJSON-iOS.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				E4F1401D14EE3E9600D258DF /* ASAP */,
@@ -288,6 +319,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		E4FBFE1D1509C7FE00F48E50 /* libTouchJSON-iphoneos.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libTouchJSON-iphoneos.a";
+			remoteRef = E4FBFE1C1509C7FE00F48E50 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E4FBFE1F1509C7FE00F48E50 /* libTouchJSON-iphonesimulator.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libTouchJSON-iphonesimulator.a";
+			remoteRef = E4FBFE1E1509C7FE00F48E50 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		E4F1401C14EE3E9600D258DF /* Resources */ = {
