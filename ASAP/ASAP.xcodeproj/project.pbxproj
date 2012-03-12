@@ -19,6 +19,10 @@
 		E401DD9114F382D900ABF031 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E401DD9014F382D900ABF031 /* CoreText.framework */; };
 		E401DD9514F3894D00ABF031 /* MyAttributedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = E401DD9414F3894C00ABF031 /* MyAttributedLabel.m */; };
 		E41B56681504DE1400A1B1E1 /* MyURLConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = E41B56671504DE1400A1B1E1 /* MyURLConnection.m */; };
+		E437BAD9150DE7BA0042AE24 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E437BADB150DE7BA0042AE24 /* Localizable.strings */; };
+		E437BAE7150DF3C20042AE24 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E437BAE5150DF3C20042AE24 /* RootViewController.m */; };
+		E437BAE8150DF3C20042AE24 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E437BAE6150DF3C20042AE24 /* RootViewController.xib */; };
+		E437BAEF150DF9320042AE24 /* MyLocalizedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = E437BAEE150DF9320042AE24 /* MyLocalizedLabel.m */; };
 		E46DB91E14F5F1A7005EF30D /* MyInternetConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = E46DB91D14F5F1A7005EF30D /* MyInternetConnector.m */; };
 		E4F1402314EE3E9600D258DF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4F1402214EE3E9600D258DF /* UIKit.framework */; };
 		E4F1402514EE3E9600D258DF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4F1402414EE3E9600D258DF /* Foundation.framework */; };
@@ -78,6 +82,13 @@
 		E41B56661504DE1400A1B1E1 /* MyURLConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyURLConnection.h; sourceTree = "<group>"; };
 		E41B56671504DE1400A1B1E1 /* MyURLConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyURLConnection.m; sourceTree = "<group>"; };
 		E41B566A1504E06A00A1B1E1 /* MyURLConnectionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyURLConnectionDelegate.h; sourceTree = "<group>"; };
+		E437BADA150DE7BA0042AE24 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E437BADC150DE7D60042AE24 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		E437BAE4150DF3C20042AE24 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		E437BAE5150DF3C20042AE24 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		E437BAE6150DF3C20042AE24 /* RootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
+		E437BAED150DF9320042AE24 /* MyLocalizedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyLocalizedLabel.h; sourceTree = "<group>"; };
+		E437BAEE150DF9320042AE24 /* MyLocalizedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyLocalizedLabel.m; sourceTree = "<group>"; };
 		E46DB91C14F5F1A7005EF30D /* MyInternetConnector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyInternetConnector.h; sourceTree = "<group>"; };
 		E46DB91D14F5F1A7005EF30D /* MyInternetConnector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyInternetConnector.m; sourceTree = "<group>"; };
 		E4F1401E14EE3E9600D258DF /* ASAP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ASAP.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -140,6 +151,8 @@
 				E401DD9214F3883C00ABF031 /* MyAttributedLabelDelegate.h */,
 				E401DD9314F3894C00ABF031 /* MyAttributedLabel.h */,
 				E401DD9414F3894C00ABF031 /* MyAttributedLabel.m */,
+				E437BAED150DF9320042AE24 /* MyLocalizedLabel.h */,
+				E437BAEE150DF9320042AE24 /* MyLocalizedLabel.m */,
 			);
 			name = ViewComponents;
 			sourceTree = "<group>";
@@ -151,6 +164,16 @@
 				E401DD7A14F37CED00ABF031 /* ic_pulltorefresh_arrow_down.png */,
 			);
 			name = images;
+			sourceTree = "<group>";
+		};
+		E437BAE9150DF63B0042AE24 /* RootViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E437BAE4150DF3C20042AE24 /* RootViewController.h */,
+				E437BAE5150DF3C20042AE24 /* RootViewController.m */,
+				E437BAE6150DF3C20042AE24 /* RootViewController.xib */,
+			);
+			name = RootViewController;
 			sourceTree = "<group>";
 		};
 		E46DB91A14F5F150005EF30D /* MyUtilities */ = {
@@ -201,6 +224,7 @@
 		E4F1402814EE3E9600D258DF /* ASAP */ = {
 			isa = PBXGroup;
 			children = (
+				E437BAE9150DF63B0042AE24 /* RootViewController */,
 				E46DB91A14F5F150005EF30D /* MyUtilities */,
 				E401DD6A14F37AEA00ABF031 /* ViewComponents */,
 				E4F1403214EE3E9600D258DF /* AppDelegate.m */,
@@ -234,6 +258,7 @@
 		E4F1404114EE3E9600D258DF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E437BADB150DE7BA0042AE24 /* Localizable.strings */,
 				E4F1404214EE3E9600D258DF /* ASAPTests-Info.plist */,
 				E4F1404314EE3E9600D258DF /* InfoPlist.strings */,
 			);
@@ -302,6 +327,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				"zh-Hans",
 			);
 			mainGroup = E4F1401314EE3E9500D258DF;
 			productRefGroup = E4F1401F14EE3E9600D258DF /* Products */;
@@ -347,6 +373,8 @@
 				E401DD7814F37CB100ABF031 /* BottomLoadingView.xib in Resources */,
 				E401DD7B14F37CED00ABF031 /* ic_pulltorefresh_arrow_up.png in Resources */,
 				E401DD7C14F37CED00ABF031 /* ic_pulltorefresh_arrow_down.png in Resources */,
+				E437BAD9150DE7BA0042AE24 /* Localizable.strings in Resources */,
+				E437BAE8150DF3C20042AE24 /* RootViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,6 +418,8 @@
 				E401DD9514F3894D00ABF031 /* MyAttributedLabel.m in Sources */,
 				E46DB91E14F5F1A7005EF30D /* MyInternetConnector.m in Sources */,
 				E41B56681504DE1400A1B1E1 /* MyURLConnection.m in Sources */,
+				E437BAE7150DF3C20042AE24 /* RootViewController.m in Sources */,
+				E437BAEF150DF9320042AE24 /* MyLocalizedLabel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,6 +442,16 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		E437BADB150DE7BA0042AE24 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E437BADA150DE7BA0042AE24 /* en */,
+				E437BADC150DE7D60042AE24 /* zh-Hans */,
+			);
+			name = Localizable.strings;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		E4F1402B14EE3E9600D258DF /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
