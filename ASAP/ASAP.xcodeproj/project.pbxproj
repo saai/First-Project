@@ -138,13 +138,13 @@
 		E401DD6A14F37AEA00ABF031 /* ViewComponents */ = {
 			isa = PBXGroup;
 			children = (
-				E401DD6C14F37B5800ABF031 /* AutoRefreshHeaderView.h */,
-				E401DD6D14F37B5800ABF031 /* AutoRefreshHeaderView.m */,
 				E401DD6E14F37B5800ABF031 /* AutoRefreshViewController.h */,
 				E401DD6F14F37B5800ABF031 /* AutoRefreshViewController.m */,
+				E401DD6C14F37B5800ABF031 /* AutoRefreshHeaderView.h */,
+				E401DD6D14F37B5800ABF031 /* AutoRefreshHeaderView.m */,
+				E401DD7514F37CB100ABF031 /* AutoRefreshHeaderView.xib */,
 				E401DD7014F37B5800ABF031 /* BottomLoadingView.h */,
 				E401DD7114F37B5800ABF031 /* BottomLoadingView.m */,
-				E401DD7514F37CB100ABF031 /* AutoRefreshHeaderView.xib */,
 				E401DD7614F37CB100ABF031 /* BottomLoadingView.xib */,
 				E401DD8D14F3821900ABF031 /* NSAttributedString+MyAttributedStringAdditions.h */,
 				E401DD8E14F3821900ABF031 /* NSAttributedString+MyAttributedStringAdditions.m */,
